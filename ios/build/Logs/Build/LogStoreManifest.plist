@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>11777B78-45F5-4F6E-9E03-F57949D8DD30</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>11777B78-45F5-4F6E-9E03-F57949D8DD30.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>reduxapi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>reduxapi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project reduxapi with scheme reduxapi and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>572933009.87570906</real>
+			<key>timeStoppedRecording</key>
+			<real>572933012.86627102</real>
+			<key>title</key>
+			<string>Building project reduxapi with scheme reduxapi and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>11777B78-45F5-4F6E-9E03-F57949D8DD30</string>
+		</dict>
+		<key>FEC9041F-6FF1-47AE-8F35-2CFF708ABF6C</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FEC9041F-6FF1-47AE-8F35-2CFF708ABF6C.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>reduxapi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>reduxapi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project reduxapi with scheme reduxapi and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>572880160.43670297</real>
+			<key>timeStoppedRecording</key>
+			<real>572880163.62142706</real>
+			<key>title</key>
+			<string>Building project reduxapi with scheme reduxapi and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>FEC9041F-6FF1-47AE-8F35-2CFF708ABF6C</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

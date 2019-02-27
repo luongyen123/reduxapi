@@ -1,0 +1,13 @@
+const GET_DATA_FEED ='GET_DATA_FEED';
+const FETCH_OK ='FETCH_OK';
+const FETCH_FAIL ='FETCH_FAIL';
+const FETCHING ='FETCHING';
+const EXTRA_FETCH ='EXTRA_FETCH';
+
+export{
+    GET_DATA_FEED,
+    FETCHING,
+    FETCH_FAIL,
+    FETCH_OK,
+    EXTRA_FETCH
+}
