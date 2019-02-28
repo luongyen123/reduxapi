@@ -2,7 +2,6 @@ import {FETCHING,FETCH_FAIL,FETCH_OK,EXTRA_FETCH} from '../actions/actionTypes';
 
 const DEFAULT_STATE ={
     data:[],
-    extra:[],
     next_page:1,
     isFetching:false,
     dataFetched:false,
@@ -15,7 +14,6 @@ export default (state=DEFAULT_STATE,action)=>{
             return{
                 ...state,
                 isFetching:true,
-                data: [],
             }
             break;
         case FETCH_OK:{
@@ -40,11 +38,10 @@ export default (state=DEFAULT_STATE,action)=>{
             
             return{
                 ...state,
-                extra:action.payload,
+                data:action.payload,
                 isFetching:false,
                 next_page:action.next_page
             }
-            console.log(data)
         }
         default:
             return state;

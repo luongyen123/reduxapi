@@ -1,0 +1,4 @@
+#Thu Feb 28 08:16:48 ICT 2019
+base.0=C\:\\Users\\LuongYen\\Desktop\\reduxapi\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

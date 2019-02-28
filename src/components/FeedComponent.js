@@ -1,66 +1,67 @@
 import React, {Component} from 'react';
 import {View,Text,StyleSheet,TouchableOpacity,ActivityIndicator,FlatList,Platform} from 'react-native';
 import {connect} from 'react-redux';
-import {fetchData,fetchExtra, getDataSuccess} from '../actions/FecthAction';
+import {fetchData,fetchExtra} from '../actions/FecthAction';
+import FeedView from './Feed/feed';
+import { Container, Content } from 'native-base';
 
-const LoadingIndicator =({loading})=>(
-    loading ?(
-        <View style={styles.loading}>
-            <ActivityIndicator 
-                animating={true}
-                style={styles.loading}
-                size='large'
-            />
-        </View>
-    ):null
-)
+
 function _renderRow(row){
-
     return(
-        <View style={styles.row}>
-            <Text>{row.item.title}</Text>
-            <Text>{row.item.description}</Text>
-        </View>
+            
+                <FeedView 
+                    avartar= {row.item.user_create.profile_path} 
+                    username={row.item.user_create.name}
+                    number_like={row.item.number_like}
+                    number_comment={row.item.number_comment}
+                    content={row.item.content}
+                    media={row.item.media}
+                    />
+       
     )
     
 }
-function _onEndReached(props){
+function _onEndReached(props,olddata){
     if(props.data.next_page !=0){
-       props.fetchExtra(props.data.next_page);
+       props.fetchExtra(props.data.next_page,olddata);
     }
-   ds = ds.concat(props.data.data);
-    
 }
-let ds=[];
+
 
 class Feed extends Component{
     constructor(props){
         super(props);
-        this.state={
-            data:[]
-        }
-        this.props.fetchData(this.props.data.next_page);
+        
         
     }
-   
+    componentDidMount(){
+        this.props.fetchData(1);
+    }
     render(){
-       
-        ds=this.props.data.data;
-        if((this.props.data.extra).length !== 0){
-            ds=ds.concat(this.props.data.extra)
-        }
         return(
+            (this.props.data.isFetching)?
+            (<View style={styles.loading}>
+                <ActivityIndicator 
+                    animating={true}
+                    style={styles.loading}
+                    size='large'
+                />
+            </View>):
+            <Container>
+               
+                <Content>
+                    <FlatList 
+                    data={this.props.data.data}
+                    renderItem={row=>_renderRow(row)}
+                    automaticallyAdjustContentInsets={false}
+                    accessibilityElementsHidden
+                    keyExtractor={row=>"'"+row.id+"'"}
+                    onEndReached={()=>_onEndReached(this.props,this.props.data.data)}
+                    onEndReachedThreshold={0.5}
+                />
+                </Content>
+            </Container>
             
-            <FlatList 
-                style={styles.container}
-                data={ds}
-                renderItem={row=>_renderRow(row)}
-                keyExtractor={row=>row.title}
-                automaticallyAdjustContentInsets={false}
-                scrollsToTop
-                onEndReached={()=>_onEndReached(this.props)}
-                onEndThreshold={0}
-            />
             
         );
     }
@@ -77,17 +78,6 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         paddingVertical:10
     },
-    row:{
-        paddingHorizontal:10,
-        paddingVertical:15
-    },
-    title:{
-        fontWeight:'bold',
-        fontSize:15
-    },
-    desc:{
-        fontSize:13
-    }
 });
 const mapStateToProps=(state)=>{
     return{
